@@ -1,7 +1,10 @@
 export class API {
 
+    static url = "https://darky-movie-rater.herokuapp.com"
+    static url_dev = "http://127.0.0.1:8000"
+
     static createMovie(body, token) {
-        return fetch(`http://127.0.0.1:8000/api/movies/`, {
+        return fetch(`${API.url}/api/movies/`, {
             method: "POST",
             headers: {
             'Content-Type': 'application/json',
@@ -12,7 +15,7 @@ export class API {
     }
 
     static getMovies(token) {
-        return fetch("http://127.0.0.1:8000/api/movies/", {
+        return fetch(`${API.url}/api/movies/`, {
             method: "GET",
             headers: {
             'Content-Type': 'application/json',
@@ -22,7 +25,7 @@ export class API {
     }
 
     static updateMovie(mov_id, body, token) {
-        return fetch(`http://127.0.0.1:8000/api/movies/${mov_id}/`, {
+        return fetch(`${API.url}/api/movies/${mov_id}/`, {
             method: "PUT",
             headers: {
             'Content-Type': 'application/json',
@@ -33,7 +36,7 @@ export class API {
     }
 
     static deleteMovie(mov_id, token) {
-        return fetch(`http://127.0.0.1:8000/api/movies/${mov_id}/`, {
+        return fetch(`${API.url}/api/movies/${mov_id}/`, {
             method: "DELETE",
             headers: {
             'Content-Type': 'application/json',
@@ -43,7 +46,7 @@ export class API {
     }
 
     static loginUser(body) {
-        return fetch(`http://127.0.0.1:8000/auth/`, {
+        return fetch(`${API.url}/auth/`, {
             method: "POST",
             headers: {
             'Content-Type': 'application/json',
@@ -53,7 +56,7 @@ export class API {
     }
 
     static registerUser(body) {
-        return fetch(`http://127.0.0.1:8000/api/users/`, {
+        return fetch(`${API.url}/api/users/`, {
             method: "POST",
             headers: {
             'Content-Type': 'application/json',

@@ -14,10 +14,11 @@ function MovieDetails(props) {
         setHighlighted(high);
     }
 
-    // TODO: move these to api-services
+    const url = "https://darky-movie-rater.herokuapp.com"
+    const url_dev = "http://127.0.0.1:8000"
 
     const rateClicked = rate => evt => {
-        fetch(`http://127.0.0.1:8000/api/movies/${mov.id}/rate_movie/`, {
+        fetch(`${url}/api/movies/${mov.id}/rate_movie/`, {
             method: "POST",
             headers: {
             'Content-Type': 'application/json',
@@ -30,7 +31,7 @@ function MovieDetails(props) {
     }
 
     const getDetails = () => {
-        fetch(`http://127.0.0.1:8000/api/movies/${mov.id}/`, {
+        fetch(`${url}/api/movies/${mov.id}/`, {
             method: "GET",
             headers: {
             'Content-Type': 'application/json',
